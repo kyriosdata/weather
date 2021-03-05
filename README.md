@@ -16,3 +16,7 @@ necessárias para acesso aos serviços do Google e WeatherStack.
 
 Felizmente o Heroku é um serviço com extensa documentação. Consulte,
 por exemplo, como realizar o [deploy](https://devcenter.heroku.com/articles/deploying-nodejs) de um projeto NodeJS neste serviço.
+
+## Acesso ao Heroku
+
+- `https://kyriosdata-weather.herokuapp.com/`

@@ -1,7 +1,7 @@
 {
   "name": "web-server",
   "version": "1.0.0",
-  "description": "",
+  "description": "Ilustra organização típica de microsserviço",
   "main": "index.js",
   "engines": {
     "node": "10.17"
