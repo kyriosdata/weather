@@ -25,8 +25,6 @@ const search = document.querySelector("input");
 const saida = document.getElementById("saida");
 const erro = document.getElementById("erro");
 
-getWeatherFor("goiania");
-
 weatherForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
