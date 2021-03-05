@@ -19,4 +19,4 @@ por exemplo, como realizar o [deploy](https://devcenter.heroku.com/articles/depl
 
 ## Acesso ao Heroku
 
-- `https://kyriosdata-weather.herokuapp.com/`
+- https://kyriosdata-weather.herokuapp.com/
