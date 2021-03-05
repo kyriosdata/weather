@@ -10,6 +10,9 @@ const geocode = require("./geocode");
 const temperatura = require("./temperatura");
 
 const app = express();
+
+// Recupera a porta a ser empregada do ambiente
+// (caso contrário, use 3000)
 const PORT = process.env.PORT || 3000;
 
 // Diretórios configurados
