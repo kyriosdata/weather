@@ -9,11 +9,11 @@ function getWeatherFor(endereco) {
     .then((r) =>
       r.json().then((j) => {
         if (j.error) {
-          saida.innerHTML = j.error;
+          saida.textContent = j.error;
         } else {
           console.log(r.url);
           saida.textContent = j.formatted_address;
-          erro.textContent = j.temperatura;
+          erro.textContent = "A temperatura é " + j.temperatura;
         }
       })
     )
@@ -27,6 +27,9 @@ const erro = document.getElementById("erro");
 
 weatherForm.addEventListener("submit", (e) => {
   e.preventDefault();
+
+  saida.textContent = "Localizando informação...";
+  erro.textContent = "";
 
   getWeatherFor(search.value);
 });
