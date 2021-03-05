@@ -9,14 +9,15 @@ function getWeatherFor(endereco) {
     .then((r) =>
       r.json().then((j) => {
         if (j.error) {
-          erro.innerHTML = j.error;
+          saida.innerHTML = j.error;
         } else {
           console.log(r.url);
-          console.log(j.temperatura);
+          saida.textContent = j.formatted_address;
+          erro.textContent = j.temperatura;
         }
       })
     )
-    .catch((e) => console.log("CATCHING WORKING", e));
+    .catch((e) => (saida.textContent = e.toString()));
 }
 
 const weatherForm = document.querySelector("form");
