@@ -18,7 +18,7 @@ const geoUrl = (local, key) =>
  * erro e dados. Onde dados é um objeto contendo as propriedades 'cidade',
  * 'latitude' e 'longitude'.
  */
-function geocode(cidade, callback) {
+function geoCallback(cidade, callback) {
   const localizacao = (error, geocodeAnswer) => {
     if (error) {
       callback(error);
@@ -43,6 +43,37 @@ function geocode(cidade, callback) {
   const encoded = encodeURIComponent(cidade);
   const geocodeUrl = geoUrl(encoded, process.env.GOOGLE_API_KEY);
   getJson(geocodeUrl, localizacao);
+}
+
+function geoPromisse(cidade) {
+  const encoded = encodeURIComponent(cidade);
+  const geocodeUrl = geoUrl(encoded, process.env.GOOGLE_API_KEY);
+  return getJson(geocodeUrl).then((r) => {
+    if (r.results.length === 0) {
+      const detalhe = r.error_message;
+      if (detalhe) {
+        return { msg: "Não foi possível obter localização. " + detalhe };
+      } else {
+        return { msg: `Nenhum resultado encontrado para ${cidade}` };
+      }
+    } else {
+      const location = r.results[0].geometry.location;
+      return {
+        cidade: cidade,
+        latitude: location.lat,
+        longitude: location.lng,
+        formatted_address: r.results[0].formatted_address,
+      };
+    }
+  });
+}
+
+function geocode(cidade, callback) {
+  if (callback) {
+    geoCallback(cidade, callback);
+  } else {
+    return geoPromisse(cidade);
+  }
 }
 
 module.exports = geocode;

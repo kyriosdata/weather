@@ -27,3 +27,16 @@ test("goiania geocode", () => {
     }
   });
 });
+
+test("goiania geocode promise", () => {
+  geocode("goiania")
+    .then((p) => expect(p.formatted_address).toBe("Goiânia, GO, Brasil"))
+    .catch(console.log);
+});
+
+test("goiania temperatra promise", () => {
+  geocode("goiania")
+    .then(temperatura)
+    .then((t) => expect(t.temperatura > 10).toBeTruthy())
+    .catch((e) => {});
+});
