@@ -20,3 +20,18 @@ por exemplo, como realizar o [deploy](https://devcenter.heroku.com/articles/depl
 ## Acesso ao Heroku
 
 - https://kyriosdata-weather.herokuapp.com/
+
+## Local
+
+- `npm run dev`  
+  Coloca o servidor em funcionamento, o que viabiliza o acesso via navegador
+- http://localhost:3000 estará disponível para receber requisições.
+
+## Heroku
+
+- Aplicação disponível em https://kyriosdata-weather.herokuapp.com/
+- `heroku local web`
+  Verificação local
+- Como realizar o deploy
+  - `heroku login`
+  - `git push heroku main`

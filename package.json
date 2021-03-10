@@ -1,7 +1,7 @@
 {
   "name": "web-server",
   "version": "1.0.0",
-  "description": "Ilustra organização típica de microsserviço",
+  "description": "Organização típica de microsserviço e Heroku deploy",
   "main": "index.js",
   "engines": {
     "node": "10.17"

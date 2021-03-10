@@ -56,19 +56,10 @@ app.get("/weather", (req, res) => {
     return res.send({ error: "It is necessary to send address to query" });
   }
 
-  geocode(req.query.address, (error, geo) => {
-    if (error) {
-      return res.send({ error: error });
-    }
-
-    temperatura(geo, (temperatureError, graus) => {
-      if (temperatureError) {
-        return res.send({ error: temperatureError });
-      }
-
-      res.send(graus);
-    });
-  });
+  geocode(req.query.address)
+    .then(temperatura)
+    .then((graus) => res.send(graus))
+    .catch((erro) => res.status(500).send({ error: erro }));
 });
 
 app.get("/help/*", (req, res) => {
