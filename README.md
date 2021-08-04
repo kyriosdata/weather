@@ -7,8 +7,8 @@ Os componentes inclem:
 
 Cliente faz requisição para obter temperatura para determinado endereço.
 Servidor, ao receber a requisição, dispara outras duas requisições,
-uma para localizar (latitute e longitde) e outra, de posse da localização,
-para recuperar a temperatra.
+uma para localizar (latitute e longitude) e outra, de posse da localização,
+para recuperar a temperatura.
 
 O primeiro serviço é oferecido pelo Google. O segundo pela WeatherStack.
 A hospedagem do servidor fica por conta do Heroku, configurado com as chaves
